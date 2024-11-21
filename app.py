@@ -18,7 +18,7 @@ The project explores the role of cooks in the U.S. workforce by analyzing trends
 
 # 1. Line Chart: Employment Over Time
 url = "https://raw.githubusercontent.com/wackyjackyi/ie6600data/refs/heads/main/ie6600p2/Employment%20Over%20Time.csv"
-st.cache_data
+@st.cache_data
 def load_data():
     return pd.read_csv(url)
 
@@ -56,7 +56,7 @@ After 2018, the decline in workforce size could suggest external factors such as
 
 # 2. Map: Employment by Location
 url = "https://raw.githubusercontent.com/wackyjackyi/ie6600data/refs/heads/main/ie6600p2/Employment_By_Location.csv"
-st.cache_data
+@st.cache_data
 def load_map_data():
     data = pd.read_csv(url)
     data = data.dropna(subset=['Latitude', 'Longitude'])
@@ -124,7 +124,7 @@ On the other hand, cooks in lower-wage states may find fewer opportunities for c
 
 # 3. Stacked bar chart: Workforce by gender
 url_bar = "https://raw.githubusercontent.com/wackyjackyi/ie6600data/refs/heads/main/ie6600p2/workforce_by_gender.csv"
-st.cache_data
+@st.cache_data
 def load_data_bar():
     data = pd.read_csv(url_bar)
     data['Year'] = data['Year'].astype(int)
@@ -205,7 +205,7 @@ These factors could push women into part-time roles or discourage them from ente
 
 # 4.Treemap: Occupations by Industry Group
 url_treemap = "https://raw.githubusercontent.com/wackyjackyi/ie6600data/refs/heads/main/ie6600p2/Occupations_by_Industries.csv"
-st.cache_data
+@st.cache_data
 def load_data_treemap():
     data = pd.read_csv(url_treemap)
     data['Year'] = data['Year'].astype(int)
